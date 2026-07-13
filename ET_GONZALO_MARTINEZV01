@@ -1,0 +1,69 @@
+#GONZALO_MARTINEZ_ET_009D
+
+diccionario_planes ={'F01': ['Plan Básico', 'MENSUAL', 1, False, False, 'libre'],
+                    'F02': ['Plan Full', 'MENSUAL', 1, True, True, 'libre'],
+                    'F03': ['Plan Estudiante', 'TRIMESTRAL', 3, False, True,'tarde'],
+                    'F04': ['Plan Senior', 'TRIMESTRAL', 3, True, False, 'mañana'],
+                    'F05': ['Plan Anual Pro', 'ANUAL', 12, True, True, 'libre'],
+                    'F06': ['Plan Nocturno', 'MENSUAL', 1, False, True, 'noche']}
+diccionario_inscripciones = {'F01': [14990, 30],
+                            'F02': [22990, 10],
+                            'F03': [39990, 0],
+                            'F04': [35990, 6],
+                            'F05': [159990, 2],
+                            'F06': [18990, 15]}
+
+def menu_principal():
+    print('========== MENÚ PRINCIPAL ==========')    
+    print('1. Cupos por tipo de plan')
+    print('2. Búsqueda de planes por rango de precio')
+    print('3. Actualizar precio de plan')
+    print('4. Agregar plan')
+    print('5. Eliminar plan')
+    print('6. Salir')
+    print('====================================\n')
+
+def leer_opcion():
+    while True:
+        if opcion == "":
+            print('Error, la opcion no puede quedar vacia.\n')
+        elif opcion.strip == "":
+            print('Error, la opcion no puede contener solo espacios.\n')
+        else:
+            try:
+                opcion = int(opcion)
+                if opcion not in (1,2,3,4,5,6):
+                    print('Error, opcion ingresada no valida\n')
+                else:
+                    return opcion
+            except ValueError as e:
+                print(f'Error, respuesta no valida, error:{e}\n')
+
+def detalle_plan(codigo):
+    for tipo in diccionario_planes[codigo][1]:
+        
+        
+    
+        cupos_disp = int(0)
+
+    print(f'La cantidad de cupos disponibles es: {cupos_disp}.\n')
+
+def cupos_tipo(tipo):
+    print('*****CUPOS POR TIPO DE PLAN****\n')
+
+    tipo = input('Ingrese el tipo de plan a solicitar cupos.(Mensual, Trimestral, Anual)')
+    tipo == str(tipo.upper)
+    
+    if tipo == "":
+            print('Error, la respuesta no puede quedar vacia.\n')
+    elif tipo.strip == "":
+            print('Error, la respuesta no puede contener solo espacios.\n')
+  
+    elif tipo not in diccionario_planes['F01'][1] or diccionario_planes['F02'][1] or diccionario_planes['F03'][1] or diccionario_planes['F04'][1] or diccionario_planes['F05'][1] or diccionario_planes['F06'][1]:
+        print('Error, no se encuentran planes con esas caracteristicas.\n')
+
+    else:
+        codigo = {diccionario_planes[codigo]}
+
+        codigo = ([diccionario_planes][codigo])
+
